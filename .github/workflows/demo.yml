@@ -1,0 +1,15 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} está probando GitHub Actions 🚀
+on: [push]
+jobs:
+  Explorar-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🚀 El job se activó automáticamente por un evento push."
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: echo "💡 El repositorio ha sido clonado en el servidor."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 El estado de este job es ${{ job.status }}."
